@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: rust-cargo
+      uses: actions-rs/cargo@v1.0.1
+      with:
+        command: build
+        toolchain: nightly # optional
